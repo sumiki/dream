@@ -7,7 +7,7 @@ window.SoundPlayer = function(){
         add_sounds: function(path){
             sounds_path.push(path)
         },
-        play: function(){
+        play: function(arg){
             if( audio && audio.played ){
                 audio.pause()
             }
@@ -21,11 +21,32 @@ window.SoundPlayer = function(){
             }
             played_number.push(next_number)
             playing_number = next_number
+
             audio = new Audio( sounds_path[playing_number] )
+
+            var count = 1;
+            audio.onended = function(){
+                if( sounds_path[playing_number].indexOf('loop') !== -1 && count < 2 ){
+
+                    count = count + 1;
+                    audio.play()
+                } else {
+                    audio.onended = function(){
+                        if( arg.callback && typeof(arg.callback) === 'function' ){
+                            arg.callback()
+                        }
+                    }
+                }
+                audio.play()
+            }
             audio.play()
+
         },
         getPlayingNumber: function(){
             return playing_number
+        },
+        getPlayedNumber: function(){
+            return played_number.length
         },
         getTotalNumber: function(){
             return sounds_path.length

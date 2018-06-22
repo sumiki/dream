@@ -6,6 +6,43 @@
 
 <title>true stories</title>
 
+<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript">
+    window.addEventListener('load', function() {
+        window.sound_player = new window.SoundPlayer()
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/jpedits_1-2_NR.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/KKsea-organHI.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/lcreatures.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/lovely48.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/MoonSun.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/NatBoy.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/onenoteimx5.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/rfootsteps.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/rollerskate.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/RussianDisco.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/sbk_Intro-loop.mp3')
+        window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/SBKbassloop.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/spacefallsloop48.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/strawbloop.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/tagan.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/thewholetime.mp3')
+        window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/vampCL.mp3')
+        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/waterblpHI.mp3')
+        window.show_debug()
+    }, true);
+
+    window.show_debug = function(){
+        $('#development').html(window.sound_player.getPlayedNumber().toString() + '/' + window.sound_player.getTotalNumber().toString() )
+    }
+
+    window.handlePlay = function(){
+        window.sound_player.play( { callback: window.show_debug } )
+
+    }
+
+
+</script>
 
 <style>
 body {
@@ -116,10 +153,10 @@ a:active {
 </head>
 
 <body>
-
+<div id="development"></div>
 
 <div>
-<h1>this is what happened</h1>
+    <h1><span style="cursor: pointer;" onclick="javascript: window.handlePlay(); return false;" >this is what happened</span></h1>
 </div>
 
 <div>
