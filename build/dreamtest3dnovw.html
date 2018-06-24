@@ -7,39 +7,75 @@
 <title>true stories</title>
 
 <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/player.js"></script>
 <script type="text/javascript">
-    window.addEventListener('load', function() {
-        window.sound_player = new window.SoundPlayer()
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/jpedits_1-2_NR.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/KKsea-organHI.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/lcreatures.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/lovely48.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/MoonSun.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/NatBoy.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/onenoteimx5.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/rfootsteps.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/rollerskate.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/RussianDisco.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/sbk_Intro-loop.mp3')
-        window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/SBKbassloop.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/spacefallsloop48.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/strawbloop.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/tagan.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/thewholetime.mp3')
-        window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/vampCL.mp3')
-        //window.sound_player.add_sounds('http://173.255.246.130/dreamsAmp3/waterblpHI.mp3')
-        window.show_debug()
-    }, true);
 
-    window.show_debug = function(){
-        $('#development').html(window.sound_player.getPlayedNumber().toString() + '/' + window.sound_player.getTotalNumber().toString() )
+    if( window.location.hash === '#test' ){
+        window.addEventListener('load', function() {
+            window.sound_player = new window.SoundPlayer();
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/SBKbassloop.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/vampCL.mp3');
+            window.dreams.show_debug();
+        }, true);
+    } else {
+        window.addEventListener('load', function() {
+            window.sound_player = new window.SoundPlayer();
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/3DreamsJ.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/bass_48.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/bkshort.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/cant_hit.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/cant_run.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/catfishNR.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/edoorcreak.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/engedits_1-2B.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/ForeverKeys.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/Got_Shot.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/gunshot.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/humopp.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/igloos.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/j12-12-14.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/jpedits_1-2_NR.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/KKsea-organHI.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/lcreatures.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/lovely48.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/MoonSun.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/NatBoy.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/onenoteimx5.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/rfootsteps.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/rollerskate.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/RussianDisco.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/sbk_Intro-loop.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/SBKbassloop.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/spacefallsloop48.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/strawbloop.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/tagan.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/thewholetime.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/vampCL.mp3');
+            window.sound_player.add_sounds('http://artasexperience.net/dreamsAmp3/waterblpHI.mp3');
+            window.dreams.show_debug();
+        }, true);
     }
 
-    window.handlePlay = function(){
-        window.sound_player.play( { callback: window.show_debug } )
-
+    window.dreams = {
+        show_debug: function(){
+            window.dreams.removeBlur();
+            $('#development').html(window.sound_player.getPlayedNumber().toString() + '/' + window.sound_player.getTotalNumber().toString() );
+        },
+        handlePlay: function(){
+            window.dreams.doBlur();
+            window.sound_player.play( { callback: function(){
+                window.dreams.show_debug();
+                window.dreams.removeBlur();
+            } } );
+        },
+        doBlur: function(){
+            $('span#what_happend').addClass('blurclass');
+        },
+        removeBlur: function(){
+            $('span#what_happend').removeClass('blurclass');
+        }
     }
+
 
 
 </script>
@@ -116,6 +152,17 @@ h1 {
                0 20px 20px rgba(0,0,0,.15);
 }
 
+h1 span.blurclass{
+    color: transparent;
+    text-shadow: #111 0 0 15px;
+    transition: 0.6s;
+}
+
+h1 span{
+    color: #FFFFFF;
+    transition: 1.0s;
+}
+
 h2 {
 	font-family: 'arial';
 	font-weight: 40;
@@ -156,7 +203,7 @@ a:active {
 <div id="development"></div>
 
 <div>
-    <h1><span style="cursor: pointer;" onclick="javascript: window.handlePlay(); return false;" >this is what happened</span></h1>
+    <h1><span id="what_happend" style="cursor: pointer;" onclick="javascript: window.dreams.handlePlay(); return false;" >this is what happened</span></h1>
 </div>
 
 <div>

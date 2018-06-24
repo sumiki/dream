@@ -26,18 +26,14 @@ window.SoundPlayer = function(){
 
             var count = 1;
             audio.onended = function(){
-                if( sounds_path[playing_number].indexOf('loop') !== -1 && count < 2 ){
-
+                if( sounds_path[playing_number].indexOf('loop') !== -1 && count < 3 ){
                     count = count + 1;
                     audio.play()
                 } else {
-                    audio.onended = function(){
-                        if( arg.callback && typeof(arg.callback) === 'function' ){
-                            arg.callback()
-                        }
+                    if( arg.callback && typeof(arg.callback) === 'function' ){
+                        arg.callback()
                     }
                 }
-                audio.play()
             }
             audio.play()
 
