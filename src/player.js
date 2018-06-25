@@ -23,6 +23,10 @@ window.SoundPlayer = function(){
             playing_number = next_number
 
             audio = new Audio( sounds_path[playing_number] )
+            $('#loader').show()
+            audio.addEventListener('canplaythrough', function() {
+                $('#loader').hide()
+            }, false);
 
             var count = 1;
             audio.onended = function(){
@@ -46,6 +50,9 @@ window.SoundPlayer = function(){
         },
         getTotalNumber: function(){
             return sounds_path.length
+        },
+        getLatest: function(){
+            return playing_number !== null ?  sounds_path[playing_number] : ''
         }
     }
 }

@@ -58,7 +58,8 @@
 
     window.dreams = {
         show_debug: function(){
-            $('#development').html(window.sound_player.getPlayedNumber().toString() + '/' + window.sound_player.getTotalNumber().toString() );
+            var stringtext = window.sound_player.getPlayedNumber().toString() + '/' + window.sound_player.getTotalNumber().toString() + ':' + window.sound_player.getLatest();
+            $('#development').html( stringtext );
         },
         handlePlay: function(){
             window.dreams.doBlur();
@@ -201,6 +202,7 @@ a:active {
 
 <body>
 <div id="development"></div>
+<div id="loader" style="display: none;" ><img src="./ajax-loader_transparent.gif"></div>
 
 <div>
     <h1><span id="what_happend" style="cursor: pointer;" onclick="javascript: window.dreams.handlePlay(); return false;" >this is what happened</span></h1>
