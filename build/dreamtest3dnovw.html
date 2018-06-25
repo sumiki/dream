@@ -58,7 +58,6 @@
 
     window.dreams = {
         show_debug: function(){
-            window.dreams.removeBlur();
             $('#development').html(window.sound_player.getPlayedNumber().toString() + '/' + window.sound_player.getTotalNumber().toString() );
         },
         handlePlay: function(){
@@ -67,6 +66,7 @@
                 window.dreams.show_debug();
                 window.dreams.removeBlur();
             } } );
+            window.dreams.show_debug()
         },
         doBlur: function(){
             $('span#what_happend').addClass('blurclass');
