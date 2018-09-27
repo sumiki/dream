@@ -33,7 +33,6 @@ window.SoundPlayer = function(){
 
             var count = 1;
             audio.onended = function(){
-                playing_number = null
                 if( sounds_path[playing_number].indexOf('loop') !== -1 && count < 3 ){
                     count = count + 1;
                     audio.play()
