@@ -60,6 +60,3 @@ window.SoundPlayer = function(){
         }
     }
 }
-
-// 全部再生したらどうする？
-//
