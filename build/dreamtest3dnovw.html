@@ -66,15 +66,28 @@
             window.sound_player.play( { callback: function(){
                 window.dreams.show_debug();
                 window.dreams.removeBlur();
+                window.dreams.hideStop();
             } } );
             window.dreams.show_debug()
+            window.dreams.showStop()
         },
         doBlur: function(){
             $('span#what_happend').addClass('blurclass');
         },
         removeBlur: function(){
             $('span#what_happend').removeClass('blurclass');
-        }
+        },
+        showStop: function(){
+            $('div#stop_area').show()
+        },
+        hideStop: function(){
+            $('div#stop_area').hide()
+        },
+        handleStop: function(){
+            window.sound_player.pause()
+            window.dreams.removeBlur()
+            window.dreams.hideStop()
+        },
     }
 
 
@@ -155,8 +168,8 @@ h1 {
 
 h1 span.blurclass{
     color: transparent;
-    text-shadow: #111 0 0 15px;
-    transition: 0.6s;
+    text-shadow: #FFF 0 0 10px;
+    transition: 0.6s;12
 }
 
 h1 span{
@@ -201,9 +214,10 @@ a:active {
 </head>
 
 <body>
-<div id="development"></div>
-<div id="loader" style="display: none;" ><img src="./ajax-loader_transparent.gif"></div>
-
+<div id="development" style="float: left;" ></div>
+<div id="loader" style="display: none;float: left;" ><img src="./ajax-loader_transparent.gif"></div>
+<div id="stop_area" style="float: right; display: none;"><span style="cursor: pointer;" onclick="javascript: window.dreams.handleStop(); return false;" >Stop</span></div>
+<div style="clear: both;"></div>
 <div>
     <h1><span id="what_happend" style="cursor: pointer;" onclick="javascript: window.dreams.handlePlay(); return false;" >this is what happened</span></h1>
 </div>

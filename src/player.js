@@ -7,6 +7,9 @@ window.SoundPlayer = function(){
         add_sounds: function(path){
             sounds_path.push(path)
         },
+        pause: function(){
+            audio.pause()
+        },
         play: function(arg){
             if( audio && audio.played ){
                 audio.pause()
@@ -30,6 +33,7 @@ window.SoundPlayer = function(){
 
             var count = 1;
             audio.onended = function(){
+                playing_number = null
                 if( sounds_path[playing_number].indexOf('loop') !== -1 && count < 3 ){
                     count = count + 1;
                     audio.play()
